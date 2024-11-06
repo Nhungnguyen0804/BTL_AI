@@ -26,6 +26,7 @@ LINK_IMG_MAY_X1 = "image\\Menu\\button\\LVbutton\\mayX1.png"
 LINK_IMG_PLAYER_X = "image\\Menu\\button\\LVbutton\\playerX.png"
 LINK_IMG_PLAYER_X1 = "image\\Menu\\button\\LVbutton\\playerX1.png"
 
+LINK_CONTENT_HD = "image\\Menu\\nd_hd.png"
 
 checkShowLV = False
 checkShowHD = False
@@ -80,6 +81,8 @@ tang1_button = load_and_transform_img(LINK_TANG,4)
 tang2_button = load_and_transform_img(LINK_TANG_PRS,4)
 giam1_button = load_and_transform_img(LINK_GIAM,4)
 giam2_button = load_and_transform_img(LINK_GIAM_PRS,4)
+
+content_hd = load_and_transform_img(LINK_CONTENT_HD,DPI)
 #==============================================
 start_btn = start_button
 lv_btn = lv_button
@@ -272,6 +275,8 @@ def show_hd():
     pygame.draw.rect(screen,BLACK,rect_show_his,width = border_width,border_radius = 15 // DPI ) #khung den
     exit_hd_frame = get_frame_and_blit_img(exit_red_btn,xhis+width-3,yhis + 3, 3)
     exitHDFrame = exit_hd_frame
+
+    nd_frame = get_frame_and_blit_img(content_hd, xhis+width//2, yhis+height//2,2)
     
 
 def draw_menu():

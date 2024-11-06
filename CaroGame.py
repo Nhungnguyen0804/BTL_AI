@@ -376,10 +376,12 @@ class CaroGame:
         toa_do_y_text = toa_do_y+ 44// DPI
         rect_text = (toa_do_x_text, toa_do_y_text )
         rect_text_2 = (toa_do_x_text, toa_do_y_text+98//2 )
+        
         rect_img_xo = (toa_do_x+width_frame-44//DPI-260//DPI, toa_do_y+height_frame-29//DPI-260//DPI )
         xImgXO, yImgXO = rect_img_xo
-        self.screen.blit(text_denLuot, rect_text)
+        
         if self.winner == 0:  # Nếu trò chơi chưa kết thúc
+            self.screen.blit(text_denLuot, rect_text)
             if self.play_with_computer:  # Nếu đang chơi với máy
                 self.screen.blit(text_luot_xo[self.current_player], rect_text_2)  # Vẽ hình ảnh lượt đi máy
                 pygame.draw.rect(self.screen,WHITE,(xImgXO,yImgXO,260//DPI,260//DPI) )
@@ -389,7 +391,8 @@ class CaroGame:
                 pygame.draw.rect(self.screen,WHITE,(xImgXO,yImgXO,260//DPI,260//DPI) )
                 self.screen.blit(img_luotChoi[self.current_player], rect_img_xo)
         else:
-            self.screen.blit(text_win[self.winner], rect_text_2)  # Vẽ hình ảnh kết quả
+            rect_text_win = text_win[self.winner].get_rect(center = (toa_do_x + width_frame//2, toa_do_y + height_frame//2))
+            self.screen.blit(text_win[self.winner], rect_text_win)  # Vẽ hình ảnh kết quả
 
     def display_time(self):
         '''

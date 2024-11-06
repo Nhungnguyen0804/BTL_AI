@@ -1,11 +1,9 @@
 '''
-
 carogame/
 --- main.py
 --- menu.py
 --- game.py
 --- constants.py
-
 '''
 
 from menuGame import main_menu # main_menu hàm chính trong file menu.py
