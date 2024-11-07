@@ -94,7 +94,7 @@ text_luot_xo = {
 text_win = {
     1:font_luot_dau.render("X thắng",True,BLACK),
     2:font_luot_dau.render("O thắng",True,RED),
-    3:font_luot_dau.render("Hòa",True,(255,255,0))
+    3:font_luot_dau.render("Hòa",True,GREEN_DAM_5E7B6F)
 }
 
 img_luotChoi = {
@@ -449,6 +449,7 @@ class CaroGame:
                 self.time_end = time
                 if self.winner ==1: stringwin = 'X'
                 elif self.winner ==2: stringwin ='O'
+                elif self.winner ==3: stringwin = "HÒA"
                 add_to_history(list_his, self.countLuotDau,stringwin ,stringTime)
                 
 

@@ -66,8 +66,11 @@ def minimax(caro, depth, max, root, alpha ):
                     list_res.append(pos) # lay toa do cua từng score       
         return list_res
     else: #ko la root
-        score = list_move_sorted[0][0]
-        x,y = list_move_sorted[0][1]
+        if len(list_move_sorted) <1:
+            return 50000
+        else:
+            score = list_move_sorted[0][0]
+            x,y = list_move_sorted[0][1]
 
 
 
@@ -102,6 +105,7 @@ def minimax(caro, depth, max, root, alpha ):
 
 
 def ai_move(caro_main,caro_phu, depth): #depth : do thminh
+    print(caro_main.winner)
     if caro_main.winner == 0:
         if caro_main.get_limit()[0] == None: 
             x,y = caro_main.board_row //2, caro_main.board_column//2
