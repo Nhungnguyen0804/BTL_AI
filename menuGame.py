@@ -236,7 +236,7 @@ def show_lv():
     if sizeBoard < 20:
         x_so = (x1+x2)/2 - 70 #x số
         y_so = y1 - 160
-    elif sizeBoard <= 20:
+    elif sizeBoard >= 20:
         x_so = (x1+x2)/2 - 90 #x số
         y_so = y1 - 160
     pygame.draw.line(screen, BLACK, (x1, y1), (x2, y2), 5)

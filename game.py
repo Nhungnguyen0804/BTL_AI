@@ -100,34 +100,21 @@ def minimax(caro, depth, max, root, alpha ):
                         return None
         return res
 
-#X thi bmax= max, O thi min
-# root luon true o lan goi first
-# def ai_move(depth): #depth : do thminh
-#     if caro_main.get_limit()[0] == None: 
-#         x,y = caro_main.board_row //2, caro_main.board_column//2
-#     else:
-#         caro_phu.import_board(caro_main.board_game)
-#         caro_phu.current_player = caro_main.current_player
-#         L = minimax(caro_phu, depth, True if caro_main.current_player == 1 else False, True, None)
-#         # L = list(set(L))
-#         print('nhung nc di toi uu:', L)
-#         x,y = random.choice(L)
-#         print('x',x)
-#         print('y',y)
-#     caro_main.computer_move(x,y)
+
 def ai_move(caro_main,caro_phu, depth): #depth : do thminh
-    if caro_main.get_limit()[0] == None: 
-        x,y = caro_main.board_row //2, caro_main.board_column//2
-    else:
-        caro_phu.import_board(caro_main.board_game)
-        caro_phu.current_player = caro_main.current_player
-        L = minimax(caro_phu, depth, True if caro_main.current_player == 1 else False, True, None)
-        # L = list(set(L))
-        print('nhung nc di toi uu:', L)
-        x,y = random.choice(L)
-        print('x',x)
-        print('y',y)
-    caro_main.computer_move(x,y)
+    if caro_main.winner == 0:
+        if caro_main.get_limit()[0] == None: 
+            x,y = caro_main.board_row //2, caro_main.board_column//2
+        else:
+            caro_phu.import_board(caro_main.board_game)
+            caro_phu.current_player = caro_main.current_player
+            L = minimax(caro_phu, depth, True if caro_main.current_player == 1 else False, True, None)
+            # L = list(set(L))
+            print('nhung nc di toi uu:', L)
+            x,y = random.choice(L)
+            print('x',x)
+            print('y',y)
+        caro_main.computer_move(x,y)
 
 
 

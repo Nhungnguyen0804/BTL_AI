@@ -723,7 +723,7 @@ class CaroGame:
                     #replay select 1 
                     self.click_button(1,1)
                     self.reset_game(False)
-                elif self.undo_btn_frame.collidepoint(e.pos):
+                elif self.winner == 0 and self.undo_btn_frame.collidepoint(e.pos):
                     self.click_button(1,2)
                     if self.play_with_computer: self.undo(2)
                     else: self.undo()
@@ -753,13 +753,6 @@ class CaroGame:
                     self.click_button(0,4)   
                 
             if e.type == pygame.KEYDOWN:  # Nếu có phím được nhấn
-
-                if e.key == pygame.K_SPACE: 
-                    self.reset_game(False)  
-                if e.key == pygame.K_BACKSPACE: 
-                    self.undo() 
-                if e.key == pygame.K_u:  # Nếu phím nhấn là U
-                    self.undo(2)  # undo hai lần
                 if e.key == pygame.K_TAB:  # TAB
                     self.check_show_affect = not self.check_show_affect  #  hiển thị ô bị ảnh hưởng or ko 
 
