@@ -1,6 +1,6 @@
 import pygame
 from constants import WINDOW_HEIGHT, WINDOW_WIDTH, RED, DPI, BLACK, WHITE, doi_thu, GREEN_DAM_5E7B6F,GREEN_NHAT_DDE5D0,GREEN_CCDDA7,YELLOW_NHAT_F3EFCA, sound, soundBtn
-from menuGame import screen, main_menu,load_and_transform_img, exit_red_btn, get_frame_and_blit_img
+from menuGame import screen, main_menu,load_and_transform_img, exit_red_btn, get_frame_and_blit_img, render_text
 
 LINK_IMAGE_CELL = "image//board//cell.png" # Hình ảnh ô trống
 LINK_IMAGE_CELL_X = "image//board//cell_x.png" 
@@ -51,6 +51,8 @@ img_luot_o = pygame.transform.scale(img_cell_o, rect_img_luotChoi)
 
 font_time = pygame.font.SysFont('Times New Roman', 80)
 font_luot_dau = pygame.font.Font('font//Inter_Bold.ttf', 80 //DPI)
+font_inter_bold = pygame.font.Font('font//Inter_Bold.ttf', 120 //DPI)
+
 font_thanh_phan_ty_so = pygame.font.Font('font//Inter_Regular.ttf', 50//DPI)
 #============================
 text_denLuot = font_luot_dau.render("Đến lượt:",True, BLACK)
@@ -92,9 +94,9 @@ text_luot_xo = {
 }
 
 text_win = {
-    1:font_luot_dau.render("X thắng",True,BLACK),
-    2:font_luot_dau.render("O thắng",True,RED),
-    3:font_luot_dau.render("Hòa",True,GREEN_DAM_5E7B6F)
+    1:font_inter_bold.render("X thắng",True,BLACK),
+    2:font_inter_bold.render("O thắng",True,RED),
+    3:font_inter_bold.render("Hòa",True,GREEN_DAM_5E7B6F)
 }
 
 img_luotChoi = {
@@ -136,9 +138,9 @@ def add_to_history(list_his, luotDau, win, time):
     # Thêm dictionary vào danh sách
     list_his.append(dict_current)
 
-def render_text(screen, font, text, color, viTrix, viTriy):
-    text_surface = font.render(text, True, color)
-    screen.blit(text_surface, (viTrix, viTriy))
+# def render_text(screen, font, text, color, viTrix, viTriy):
+#     text_surface = font.render(text, True, color)
+#     screen.blit(text_surface, (viTrix, viTriy))
 
 def print_his(lisHis, screen, x,y):
     viTriy = y+ 46
@@ -428,12 +430,12 @@ class CaroGame:
                 if giay < 10:
                     stringTime += "0"
                 stringTime += str(giay)
-                # text_time_string = "Time: " 
+                
                 
                 self.img_time = font_time.render(stringTime,True, GREEN_DAM_5E7B6F)
                 self.pos_img_time = self.img_time.get_rect() #vi tri img time
                 self.pos_img_time.topleft = rect_time
-                # self.vt_img_time[0] += 700
+                
         else:
             if self.time_end == None: 
                 time = (pygame.time.get_ticks() - self.play_time)//1000
