@@ -262,9 +262,6 @@ class CaroGame:
       
         self.import_list_affect()
 
-       
-
-    # def import_list_affect(self): chac cha can nhi??
     def import_list_affect(self):
         self.list_affect = []
         res = {1:0,2:0}
@@ -552,10 +549,8 @@ class CaroGame:
         
         if self.check_music:
             music_btn = music_button
-            # pygame.mixer.music.unpause()
         else:
             music_btn = mute_button
-            # pygame.mixer.music.pause()
             
         self.musicFrame = get_frame_and_blit_img(music_btn,WINDOW_WIDTH-5,  1, 3) # 3 topright
 
@@ -627,7 +622,7 @@ class CaroGame:
         return self.left,self.right,self.up,self.down
     
     # lệnh undo hoàn tác nc di
-    def undo(self, num = 1): #số lượng = 1???
+    def undo(self, num = 1): 
         for i in range(num):
             if len(self.list_move_history) != 0:  # Nếu còn nước đi để hoàn tác, tuc la lsu move con nc di
                 # Khôi phục danh sách ô bị ảnh hưởng từ danh sách undo
@@ -671,11 +666,9 @@ class CaroGame:
             button_nha =  his_button
     
         if (check_press == 1): # nhấn
-                # print("start")
             soundBtn.play()
             button = button_nhan
         else: 
-                # print("nhả")
             button = button_nha
         
         if select == 1: replay_btn = button
@@ -685,8 +678,6 @@ class CaroGame:
         
     
     def event(self): 
-        
-        # global replay_btn
         # Xử lý các sự kiện trong trò chơi
         for e in pygame.event.get():  # Lặp qua các sự kiện
             if e.type == pygame.QUIT:  # Nếu người dùng đóng cửa sổ
@@ -695,11 +686,6 @@ class CaroGame:
                 pygame.quit()  # Thoát Pygame
                 return
             if e.type == pygame.MOUSEBUTTONDOWN:  # Nếu có nhấp chuột
-                '''
-                Nếu trò chơi chưa kết thúc và:
-                Hoặc không chơi với máy (chơi với người),
-                Hoặc nếu đang là lượt của người chơi hiện tại (nếu có hai người chơi).
-                '''
                 if self.winner == 0 and (self.play_with_computer == False or self.current_player == 1 or self.current_player == 2):  # Nếu trò chơi chưa kết thúc và lượt hợp lệ (1,2) (x,o)
                     x, y = pygame.mouse.get_pos()  # Lấy tọa độ chuột
                     x, y = x // self.cell_size, y // self.cell_size  # Chuyển đổi tọa độ chuột thành ô
@@ -841,25 +827,11 @@ class CaroGame:
 
 def checkPauseMusic(check):
     if check:
-        # music_btn = music_button
         pygame.mixer.music.unpause()
     else:
-        # music_btn = mute_button
         pygame.mixer.music.pause()
     
-# if __name__ == "__main__":
 
-# #     '''pvp    '''
-#     caro_size = 15
-#     caro = CaroGame(caro_size, caro_size)  # Khởi tạo đối tượng trò chơi với kích thước 10x10
-#     # caro.play_with_computer = True  # Đặt chế độ chơi với máy
-#     caro_phu = CaroGame(caro.board_row, caro.board_column)
-
-#     while caro.run_game():
-#         if caro.current_player == 1: # o
-#             # ai_move(3)
-#             # pass
-    
 
 
 

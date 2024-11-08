@@ -6,7 +6,7 @@ carogame/
 --- constants.py
 '''
 
-from menuGame import main_menu # main_menu hàm chính trong file menu.py
+from menuGame import main_menu 
 from constants import background_music
 import pygame
 pygame.mixer.music.load(background_music)

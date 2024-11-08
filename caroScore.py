@@ -82,8 +82,6 @@ def score_tung_huong(caro, x,y, xm,ym):
 
     if nhay_cach == True: res_nhay_cach=0.75
     else: res_nhay_cach = 1
-
-    # print(f'dem {count} huong1 {huong1} huong2 {huong2} cach {res_nhay_cach}')
     score = 3**count* (huong1+huong2) * res_nhay_cach
     # print(score)
     return score
@@ -105,8 +103,6 @@ def calculate_score(caro, currentPlayer):
         for y in range(up, down+1):
             for x in range(left,right+1):
                 if caro.board_game[y][x] != 0:
-                    # print(caro.board_game[y][x])
-                    # print(score_o(caro,x,y))
                     Dict_res[caro.board_game[y][x]] += score_o(caro,x,y) # j ung truc x, i ung truc y
 
     # print(Dict_res)
@@ -115,11 +111,6 @@ def calculate_score(caro, currentPlayer):
     return Dict_res[currentPlayer] - Dict_res[doi_thu[currentPlayer]]
 
 
-# caro = CaroGame(5,5)
-# from naphinhco import naphinhco
-# naphinhco(caro)
-# print(calculate_score(caro,1))
-# while caro.run_game():
-#     pass
+
 
 

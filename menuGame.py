@@ -309,8 +309,6 @@ def event():
                     click_btn(1,1)
                    
                     from game import runPlayGame
-                    # print(sizeBoard)
-                    # set_size(sizeBoard)
                     runPlayGame(check_pvc,check_move_first)
                 elif checkShowLV == False and checkShowHD == False and lv_btn_frame.collidepoint(e.pos):
                     click_btn(1,2)
@@ -353,8 +351,6 @@ def event():
 
             if e.type == pygame.MOUSEBUTTONUP:
                 if  checkShowLV == False and checkShowHD == False and start_button_frame.collidepoint(e.pos):
-                # print(event.pos)
-                    # nhấn = 1, nhả = 0
                     click_btn( 0,1)
                 # elif checkShowLV == False and lv_btn_frame.collidepoint(e.pos):
                 #     click_btn(0,2)
