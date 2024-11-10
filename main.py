@@ -1,11 +1,3 @@
-'''
-carogame/
---- main.py
---- menu.py
---- game.py
---- constants.py
-'''
-
 from menuGame import main_menu 
 from constants import background_music
 import pygame

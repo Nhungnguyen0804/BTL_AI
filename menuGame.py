@@ -1,6 +1,6 @@
 import pygame
 import sys
-from constants import WINDOW_WIDTH, WINDOW_HEIGHT, GREEN,WHITE,BLACK,DPI, GREEN_DAM_5E7B6F,GREEN_NHAT_DDE5D0,GREEN_CCDDA7,YELLOW_NHAT_F3EFCA, soundBtn
+from constants import WINDOW_WIDTH, WINDOW_HEIGHT,BLACK,DPI,YELLOW_NHAT_F3EFCA, soundBtn
 #link image
 LINK_IMAGE_MENU_BACKGROUND = "image\\Menu\\caro_menu_background.png"
 LINK_IMAGE_START_BUTTON =  "image\\Menu\\button\\start.png"

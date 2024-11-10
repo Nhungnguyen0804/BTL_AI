@@ -28,8 +28,6 @@ def minimax(caro, depth, max, root, alpha ):
     caroMain.wait()
     list_move_sorted = sort_move(caro) # list 2 thanh phan ( score va pos (x,y))
     
-    # print(list_move_sorted)
-
 
     if root == True: # dang o root
         score = list_move_sorted[0][0] # p.tu first co chi so 0 la score
@@ -43,27 +41,25 @@ def minimax(caro, depth, max, root, alpha ):
                 x,y = pos
                 caro.computer_move(x,y)
                 #nhánh, alpha root ko dc = -1 vi phu thuoc max,min
-                # max => -1, min => -1
+                # max => -1, min => +1
                 branch = minimax(caro , depth-1, not max, False, None if res == None else res-1 if max else res+1)
                 
                 caro.undo()
             else:  
-                # print('***nhanh root', score)
                 branch = score #depth = 1 r
             
             if branch!=None:
-                # root k bt den luot X hay O, k bt max hay min => can dk max = true thi ...
                 if max == True and (res == None or branch > res):
                     print('xo', caro.current_player, 'depth',depth,'diem',score,'max',max,'toado',pos, 'nhanh',branch,'res kq',res)
-                    list_res = [pos] # lay toa do cua từng score
+                    list_res = [pos] # 1 tdo
                     res = branch
                 elif max == False and (res == None or branch < res): # min
                     print('xo', caro.current_player, 'depth',depth,'diem',score,'max',max,'toado',pos, 'nhanh',branch,'res kq',res)
-                    list_res = [pos] # lay toa do cua từng score
+                    list_res = [pos] # 1 tdo
                     res = branch
                 elif res == branch:
                     print('xo', caro.current_player, 'depth',depth,'diem',score,'toado append',pos, 'nhanh',branch,'res kq',res)
-                    list_res.append(pos) # lay toa do cua từng score       
+                    list_res.append(pos) # nhieu tdo diem = nhau     
         return list_res
     else: #ko la root
         if len(list_move_sorted) <1:

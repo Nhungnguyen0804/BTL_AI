@@ -42,7 +42,7 @@ pygame.display.set_icon(img_icon)
 
 img_background = load_and_transform_img(LINK_IMAGE_BACKGROUND,DPI)
 
-img_background_right = pygame.image.load(LINK_IMAGE_BACKGROUND_RIGHT) # nc đi trc mang màu này, đặt hình size nào cũng đc miễn có màu và to hơn cell size
+img_background_right = pygame.image.load(LINK_IMAGE_BACKGROUND_RIGHT) 
 rect_img_luotChoi = (260//DPI,260//DPI)
 img_luot_x = pygame.transform.scale(img_cell_x, rect_img_luotChoi)
 img_luot_o = pygame.transform.scale(img_cell_o, rect_img_luotChoi)
@@ -138,9 +138,7 @@ def add_to_history(list_his, luotDau, win, time):
     # Thêm dictionary vào danh sách
     list_his.append(dict_current)
 
-# def render_text(screen, font, text, color, viTrix, viTriy):
-#     text_surface = font.render(text, True, color)
-#     screen.blit(text_surface, (viTrix, viTriy))
+
 
 def print_his(lisHis, screen, x,y):
     viTriy = y+ 46
@@ -192,7 +190,7 @@ class CaroGame:
             self.img_previous_move = pygame.transform.scale(img_final_move_cell, (self.cell_size, self.cell_size))  # Hình ảnh cho nước đi trước
             self.img_effect_move = pygame.transform.scale(img_cell_effect, (self.cell_size, self.cell_size)) 
             
-            # self.screen = pygame.display.set_mode((1000, 700))  # Thiết lập kích thước cửa sổ
+          
             self.screen = pygame.display.set_mode((WINDOW_WIDTH,WINDOW_HEIGHT))
 
         self.run = True # kiểm soát vòng lặp trò chơi
@@ -613,7 +611,7 @@ class CaroGame:
                             if (x_new, y_new) not in self.list_affect and self.board_game[y_new][x_new] == 0:
                                 self.list_affect.append((x_new, y_new))  # Thêm ô vào danh sách ảnh hưởng
 
-    # def lay_L_nuoc_di(self):
+
     def get_list_move_affected(self):
     # Trả về bản sao của danh sách ô bị ảnh hưởng
         return self.list_affect.copy()
