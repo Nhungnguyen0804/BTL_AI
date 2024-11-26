@@ -10,7 +10,7 @@ LINK_IMAGE_FINAL_MOVE_CELL = "image//board//final_move_cell.png"
 LINK_IMAGE_BACKGROUND = "image//background.png"
 LINK_IMAGE_BACKGROUND_RIGHT = "image//background_right.png"
 LINK_IMAGE_BACKGROUND_RIGHT_UP = "image//background_right_up.png"
-LINK_IMAGE_ICON_APP = "image//icon_game.png"
+
 
 LINK_IMAGE_BUTTON_REPLAY = "image//buttonPlay//button_replay.png"
 LINK_IMAGE_BUTTON_UNDO = "image//buttonPlay//button_undo.png"
@@ -37,8 +37,7 @@ img_cell_x = pygame.image.load(LINK_IMAGE_CELL_X)
 img_cell_o = pygame.image.load(LINK_IMAGE_CELL_O)
 img_final_move_cell = pygame.image.load(LINK_IMAGE_FINAL_MOVE_CELL)
 img_cell_effect = pygame.image.load(LINK_IMAGE_CELL_EFFECT)
-img_icon = pygame.image.load(LINK_IMAGE_ICON_APP) 
-pygame.display.set_icon(img_icon)
+
 
 img_background = load_and_transform_img(LINK_IMAGE_BACKGROUND,DPI)
 

@@ -94,7 +94,7 @@ def score_o(caro,x,y):
 
     return res
 
-def calculate_score(caro, currentPlayer):
+def calculate_score(caro, maxPlayer):
     Dict_res = {1: 0, 2: 0 }
     left,right,up,down = caro.get_limit()
     # print("left,right,up,down: ", left,right,up,down)
@@ -108,7 +108,7 @@ def calculate_score(caro, currentPlayer):
     # print(Dict_res)
     Dict_res[caro.current_player] *= 2
     # print(Dict_res)
-    return Dict_res[currentPlayer] - Dict_res[doi_thu[currentPlayer]]
+    return Dict_res[maxPlayer] - Dict_res[doi_thu[maxPlayer]]
 
 
 
